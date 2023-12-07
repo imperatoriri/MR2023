@@ -122,7 +122,12 @@ void simulation() {
             //printf("Bob salary = %0.2d rub \n", Bob.salary / 100);
             //printf("Bob wastes = %0.2d rub \n", Bob.waste / 100);
             add_bank_percents(&Bob);
-            add_salary(&Bob);
+
+
+            if ((mon + START_MONTH) % 12 != 6) { // SKIP IF VACATION MONTH (JUNE)
+                add_salary(&Bob);
+            }
+
             remove_month_payment(&Bob);
             remove_wastes(&Bob);
             //printf("Bob month cash = %0.2d rub \n", Bob.month_cash / 100);
@@ -142,6 +147,7 @@ void simulation() {
     }
     print_out();
 }
+
 
 
 int main() {
