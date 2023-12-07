@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-// CONSTS
 const int INITIAL_AMOUNT = 1000000 * 100; // FIRST INPUT IN BANK (KOPECK) BOB AND ALICE
 const int FIRST_PAYMENT = 1000000 * 100; // BOB'S INPUT IN FLAT (KOPECK)
 const int RENT_PRICE = 20000000 * 100; // FLAT'S PRICE (KOPECK)
@@ -43,7 +42,7 @@ void print_out();
 void simulation();
 
 void init_bob(struct Client* init_Bob) {
-    // BOB IPOTEKA
+    // BOB MORTGAGE
     init_Bob->bank_account = INITIAL_AMOUNT - FIRST_PAYMENT;
     init_Bob->month_cash = 0;
     init_Bob->salary = 200000 * 100;
